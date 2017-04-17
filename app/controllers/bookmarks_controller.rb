@@ -6,7 +6,12 @@ class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.all
   end
+  Bookmarks::Application.routes.draw do
+  # […]
+  root ‘bookmarks#index’
 
+  # […]
+  end
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
